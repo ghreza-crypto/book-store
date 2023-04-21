@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { getBooks, removeBook } from '../redux/books/actions';
 
 const Book = ({ title, author, itemId }) => {
   const dispatch = useDispatch();
+  const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+
+  const handleRemove = () => {
+    dispatch(removeBook({ URL, itemId }))
+      .then(() => {
+        dispatch(getBooks(URL));
+      });
+  };
 
   return (
     <div>
       <p>{title}</p>
       <p>{author}</p>
-      <button type="button" onClick={() => dispatch(removeBook(itemId))}>remove</button>
+      <button type="button" onClick={() => handleRemove()}>Remove</button>
     </div>
   );
 };
