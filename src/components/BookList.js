@@ -24,11 +24,14 @@ const BookList = () => {
   const error = !isSuccess && <p>{errorMessage}</p>;
 
   return (
-    <div>
+    <>
+
       {isLoading ? <p>Loading...</p> : null}
 
       {bookList || error}
-    </div>
+      <div className="horizontalDivider" />
+
+    </>
   );
 };
 

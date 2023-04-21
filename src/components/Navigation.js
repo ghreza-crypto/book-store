@@ -1,17 +1,17 @@
 import { NavLink } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PersonIcon from '@mui/icons-material/Person';
 
 const Navigation = () => (
-  <nav>
-    <h1>Bookstore CMS</h1>
-    <ul>
-      <li>
-        <NavLink to="/">Books</NavLink>
-      </li>
-      <li>
-        <NavLink to="categories">Categories</NavLink>
-      </li>
-    </ul>
-
+  <nav className="navbar">
+    <div className="navLinks">
+      <h1>Bookstore CMS</h1>
+      <NavLink to="/">Books</NavLink>
+      <NavLink to="categories">Categories</NavLink>
+    </div>
+    <button type="button" className="iconButton">
+      <PersonIcon />
+    </button>
   </nav>
 );
 

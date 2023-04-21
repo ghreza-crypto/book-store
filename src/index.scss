@@ -1,0 +1,355 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Colors
+$lightblue: #0290ff;
+$coolblue: #4386bf;
+$white: #fff;
+$gray: #e8e8e8;
+$black: #121212;
+
+// General styling
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+}
+
+// Navbar styles
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.688rem 6rem;
+  background-color: $white;
+  border-bottom: solid 1px $gray;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2.75rem;
+
+    h1 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: $lightblue;
+    }
+
+    a {
+      font-size: 0.813rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.9px;
+      color: $black;
+      opacity: 0.5;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        font-weight: 500;
+        opacity: 1;
+      }
+    }
+
+    .active {
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+
+  .iconButton {
+    cursor: pointer;
+    width: 2.813rem;
+    height: 2.813rem;
+    border-radius: 50%;
+    border: 1px solid #e8e8e8;
+    background-color: #fff;
+    color: $lightblue;
+  }
+}
+
+// Booklist section styles
+.bookListSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 6rem;
+  margin-top: 10rem;
+
+  .chapterInfo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    gap: 0.5rem;
+
+    h4 {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-size: 0.813rem;
+      font-weight: 400;
+      color: $black;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: -0.4px;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      border-radius: 3px;
+      width: 11.5rem;
+      font-family: 'Roboto Slab', serif;
+      background-color: $lightblue;
+      letter-spacing: 0.5px;
+      font-size: 0.8rem;
+      font-weight: 300;
+      border: 1px solid;
+      color: $white;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $white;
+        color: $lightblue;
+      }
+    }
+  }
+
+  .bookContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10rem 2rem 2rem;
+    height: 10rem;
+    width: 100%;
+    background-color: $white;
+    border: solid 1px $gray;
+
+    .bookInfo {
+      .category {
+        opacity: 0.5;
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: $black;
+      }
+
+      .title,
+      .author,
+      .actions button {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      .title {
+        font-size: 1.375rem;
+        font-weight: bold;
+        letter-spacing: -0.2px;
+      }
+
+      .author {
+        font-size: 0.875rem;
+        font-weight: 300;
+        color: $coolblue;
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+        list-style: none;
+        margin-top: 1rem;
+
+        .verticalDivider {
+          width: 0.125rem;
+          height: 1.5rem;
+          background-color: $gray;
+          margin: 0 1rem;
+        }
+
+        button {
+          background: none;
+          border: none;
+          color: $coolblue;
+          font-size: 0.875rem;
+          font-weight: 300;
+          transition: color 0.1s ease-in, font-weight 0.1s ease-in;
+          cursor: pointer;
+
+          &:hover {
+            font-weight: 500;
+            color: $lightblue;
+          }
+        }
+      }
+    }
+
+    .progressContainer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .progressInfo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .circularProgressContainer {
+          width: 5.625rem;
+          height: 5.625rem;
+          padding: 0.63rem 0.625rem 0.75rem 0.75rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .circularProgress {
+            position: absolute;
+            border-radius: 50%;
+            width: 4.25rem;
+            height: 4.25rem;
+            border: 5px solid $lightblue;
+            border-left-color: $gray;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+
+        .progressNumber {
+          h4 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: $black;
+          }
+
+          p {
+            opacity: 0.5;
+            font-size: 0.875rem;
+            color: $black;
+          }
+        }
+      }
+
+      .progressDivider {
+        width: 0.125rem;
+        height: 4.375rem;
+        margin: 0 3.688rem 0 4.938rem;
+        background-color: $gray;
+      }
+    }
+  }
+}
+
+.horizontalDivider {
+  height: 0.125rem;
+  background-color: #e8e8e8;
+  width: 85%;
+  margin: 2.5rem 0 1.813rem;
+}
+
+// Form styles
+.addBookForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+  gap: 1rem;
+  margin-bottom: 20rem;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $black;
+    opacity: 0.5;
+  }
+
+  .inputsContainer {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+
+    .titleInput {
+      width: 55%;
+    }
+
+    .authorInput {
+      width: 25%;
+    }
+
+    .submitButton {
+      font-family: 'Roboto Slab', serif !important;
+      background-color: $lightblue;
+      text-transform: uppercase;
+      width: 20%;
+      border: 1px solid $lightblue !important;
+      letter-spacing: 0.5px;
+      color: $white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .titleInput,
+    .authorInput,
+    .submitButton {
+      font-family: "Montserrat", sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: 3px;
+      border: 1px solid $gray;
+
+      &::placeholder {
+        color: $black;
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid $lightblue;
+      }
+    }
+
+    .submitButton:hover {
+      background-color: $white;
+      color: $lightblue;
+    }
+  }
+}
+
+//Categories section styles
+.categoriesSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 2rem;
+
+  .checkStatusButton {
+    font-family: "Montserrat", sans-serif;
+    padding: 1rem;
+    background-color: $lightblue;
+    text-transform: uppercase;
+    border: 1px solid #006ec2;
+    box-shadow: inset 0 0 3px 0 #006ec2;
+    color: $white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $white;
+      color: $lightblue;
+    }
+  }
+}
