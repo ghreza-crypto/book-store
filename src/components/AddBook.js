@@ -29,13 +29,16 @@ const AddBook = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        <input type="text" placeholder="Author" value={author} onChange={(e) => setAuthor(e.target.value)} required />
-        <button type="submit">Add book</button>
-      </form>
-    </div>
+
+    <form onSubmit={(e) => handleSubmit(e)} className="addBookForm">
+      <h2>Add new book</h2>
+      <div className="inputsContainer">
+        <input type="text" placeholder="Title" className="titleInput" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <input type="text" placeholder="Author" className="authorInput" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+        <button type="submit" className="submitButton">Add book</button>
+      </div>
+    </form>
+
   );
 };
 

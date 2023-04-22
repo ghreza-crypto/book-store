@@ -2,10 +2,10 @@ import BookList from '../BookList';
 import AddBook from '../AddBook';
 
 const Books = () => (
-  <div>
+  <section className="bookListSection">
     <BookList />
     <AddBook />
-  </div>
+  </section>
 );
 
 export default Books;
